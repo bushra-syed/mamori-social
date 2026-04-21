@@ -72,21 +72,7 @@
         </div>
       </div>
 
-      <!-- FORM -->
-      <!--
-        EMAIL SETUP: This form sends to hello@mamorisocial.com via Formspree.
-        To activate it:
-        1. Go to https://formspree.io and sign up (free)
-        2. Create a new form pointed at hello@mamorisocial.com
-        3. Replace YOUR_FORM_ID below with the ID Formspree gives you
-        Until then, the form will show a success message but not send anything.
-      -->
-      <form
-        class="contact-form"
-        id="contactForm"
-        action="https://formspree.io/f/YOUR_FORM_ID"
-        method="POST"
-      >
+      <form class="contact-form" id="contactForm">
         <div class="form-group">
           <label for="name">Your name</label>
           <input type="text" id="name" name="name" placeholder="Jane Smith" required />
@@ -112,9 +98,7 @@
           <label for="message">Tell us what you're looking for</label>
           <textarea id="message" name="message" placeholder="A bit about your brand or your audience and what you're hoping to do..."></textarea>
         </div>
-        <input type="text" name="_gotcha" style="display:none" />
         <button type="submit" class="btn btn-primary">Send message</button>
-        <p class="form-success" id="formSuccess" style="display:none; color: #6B9E7A; font-size: 0.9rem; margin-top: 8px;">Sent. We'll get back to you within 48 hours.</p>
       </form>
 
     </div>

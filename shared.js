@@ -34,50 +34,27 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   });
 });
 
-// Contact form — works with Formspree or shows success if not yet set up
+// Contact form — opens mailto on submit
 const form = document.getElementById('contactForm');
 if (form) {
-  form.addEventListener('submit', async function (e) {
-    const action = form.getAttribute('action') || '';
-    const btn = form.querySelector('button[type="submit"]');
-    const successMsg = document.getElementById('formSuccess');
-
-    if (action.includes('YOUR_FORM_ID')) {
-      // Formspree not yet configured — prevent submission and show message
-      e.preventDefault();
-      btn.textContent = 'Sent!';
-      btn.style.background = '#6B9E7A';
-      btn.disabled = true;
-      if (successMsg) successMsg.style.display = 'block';
-      return;
-    }
-
-    // Formspree configured — let it submit but intercept for nice UX
+  form.addEventListener('submit', function (e) {
     e.preventDefault();
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
 
-    try {
-      const data = new FormData(form);
-      const res = await fetch(action, {
-        method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
-      });
-      if (res.ok) {
-        btn.textContent = 'Sent!';
-        btn.style.background = '#6B9E7A';
-        if (successMsg) successMsg.style.display = 'block';
-        form.reset();
-      } else {
-        btn.textContent = 'Something went wrong. Try again.';
-        btn.style.background = '#C8694F';
-        btn.disabled = false;
-      }
-    } catch {
-      btn.textContent = 'Something went wrong. Try again.';
-      btn.style.background = '#C8694F';
-      btn.disabled = false;
-    }
+    const name     = form.querySelector('#name').value.trim();
+    const email    = form.querySelector('#email').value.trim();
+    const ig       = form.querySelector('#instagram').value.trim();
+    const type     = form.querySelector('#type').value;
+    const message  = form.querySelector('#message').value.trim();
+
+    const subject = encodeURIComponent('Mamori Social — Enquiry from ' + name);
+    const body = encodeURIComponent(
+      'Name: ' + name + '\n' +
+      'Email: ' + email + '\n' +
+      (ig ? 'Instagram: ' + ig + '\n' : '') +
+      'Type: ' + type + '\n\n' +
+      message
+    );
+
+    window.location.href = 'mailto:hello@mamorisocial.com?subject=' + subject + '&body=' + body;
   });
 }
