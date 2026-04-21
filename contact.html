@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Mamori Social</title>
+  <meta name="description" content="Get in touch with Mamori Social. Whether you're a brand or a creator, we'd love to hear from you." />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css" />
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-mark"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+    <div class="nav-wordmark">mamori<span>social</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="for-brands.html">For brands</a></li>
+    <li><a href="for-creators.html">For creators</a></li>
+    <li><a href="contact.html" class="nav-cta nav-active-cta">Work with us</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" id="mobileClose">✕</button>
+  <a href="about.html" class="mobile-link">About</a>
+  <a href="for-brands.html" class="mobile-link">For brands</a>
+  <a href="for-creators.html" class="mobile-link">For creators</a>
+  <a href="contact.html" class="mobile-link">Work with us</a>
+</div>
+
+<!-- CONTACT HERO + FORM -->
+<section style="min-height: 100vh; padding: 140px 40px 100px; background: var(--cream);">
+  <div class="section-inner">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start;">
+
+      <!-- LEFT -->
+      <div>
+        <span class="eyebrow">Get in touch</span>
+        <h1 style="font-family: var(--serif); font-weight: 300; font-size: clamp(2.5rem, 5vw, 3.5rem); letter-spacing: -0.03em; line-height: 1.05; color: var(--ink); margin: 16px 0 24px;">
+          Let's figure out if we're <em style="color: var(--rose); font-style: italic;">the right fit</em>
+        </h1>
+        <p style="color: var(--ink-light); font-size: 1.05rem; line-height: 1.75; margin-bottom: 40px;">
+          Fill out the form and we'll get back to you within 48 hours. If you're a brand, tell us a bit about your product and what you're trying to accomplish. If you're a creator, tell us about your audience.
+        </p>
+
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <a href="https://www.instagram.com/mamorisocial" target="_blank" rel="noopener" class="contact-link">
+            <div class="contact-link-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+            </div>
+            @mamorisocial
+          </a>
+          <a href="https://www.linkedin.com/company/mamorisocial" target="_blank" rel="noopener" class="contact-link">
+            <div class="contact-link-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </div>
+            Mamori Social on LinkedIn
+          </a>
+          <a href="mailto:hello@mamorisocial.com" class="contact-link">
+            <div class="contact-link-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            hello@mamorisocial.com
+          </a>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <!--
+        EMAIL SETUP: This form sends to hello@mamorisocial.com via Formspree.
+        To activate it:
+        1. Go to https://formspree.io and sign up (free)
+        2. Create a new form pointed at hello@mamorisocial.com
+        3. Replace YOUR_FORM_ID below with the ID Formspree gives you
+        Until then, the form will show a success message but not send anything.
+      -->
+      <form
+        class="contact-form"
+        id="contactForm"
+        action="https://formspree.io/f/YOUR_FORM_ID"
+        method="POST"
+      >
+        <div class="form-group">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" placeholder="jane@yourbrand.com" required />
+        </div>
+        <div class="form-group">
+          <label for="instagram">Instagram handle <span style="font-weight:400; text-transform:none; letter-spacing:0;">(optional)</span></label>
+          <input type="text" id="instagram" name="instagram" placeholder="@youraccount" />
+        </div>
+        <div class="form-group">
+          <label for="type">I am a</label>
+          <select id="type" name="type" required>
+            <option value="">Select one</option>
+            <option value="brand">Brand or agency</option>
+            <option value="creator">Creator</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Tell us what you're looking for</label>
+          <textarea id="message" name="message" placeholder="A bit about your brand or your audience and what you're hoping to do..."></textarea>
+        </div>
+        <input type="text" name="_gotcha" style="display:none" />
+        <button type="submit" class="btn btn-primary">Send message</button>
+        <p class="form-success" id="formSuccess" style="display:none; color: #6B9E7A; font-size: 0.9rem; margin-top: 8px;">Sent. We'll get back to you within 48 hours.</p>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding: 100px 40px; background: var(--white);">
+  <div class="section-inner" style="max-width: 720px;">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-h">Common questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Do you work with micro creators?</button>
+        <div class="faq-a">Yes. We work with creators from 1,000 followers and up. Follower count matters less to us than how engaged your audience actually is. Some of our best-performing campaigns have come from accounts with under 20K followers.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What platforms do you work across?</button>
+        <div class="faq-a">Mainly Instagram and TikTok but we're open to YouTube Shorts and Pinterest depending on the brand and the creator. If your audience lives somewhere specific, we'll meet them there.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How long does a campaign take?</button>
+        <div class="faq-a">From initial conversation to live content, most campaigns take two to four weeks. If you have a hard deadline we'll work backwards from there. Rush timelines are possible with enough notice.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What does it cost?</button>
+        <div class="faq-a">It depends on the scope, the number of creators and the deliverables. We don't have a one-size-fits-all rate card. Get in touch and we'll put together something that makes sense for your budget and your goals.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">I'm a creator. How do I join the network?</button>
+        <div class="faq-a">Fill out the form above and select "Creator." Tell us about your audience and what kind of content you make. We review every application personally and get back to you within a week.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="nav-logo" style="text-decoration:none;">
+          <div class="nav-mark"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+          <div class="nav-wordmark" style="color: var(--rose-soft);">mamori<span style="color: rgba(245,239,231,0.45);">social</span></div>
+        </a>
+        <div class="footer-tagline">a creator agency for the mom economy</div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Work with us</h4>
+          <ul>
+            <li><a href="for-brands.html">For brands</a></li>
+            <li><a href="for-creators.html">For creators</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow along</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/mamorisocial" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.linkedin.com/company/mamorisocial" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Mamori Social. All rights reserved.</p>
+      <div style="display: flex; gap: 8px;">
+        <a href="https://www.instagram.com/mamorisocial" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/mamorisocial" target="_blank" rel="noopener" class="footer-social-link" aria-label="LinkedIn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>
