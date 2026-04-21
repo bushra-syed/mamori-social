@@ -34,27 +34,34 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   });
 });
 
-// Contact form — opens mailto on submit
+// Contact form — Formspree
 const form = document.getElementById('contactForm');
 if (form) {
-  form.addEventListener('submit', function (e) {
+  form.addEventListener('submit', async function (e) {
     e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
 
-    const name     = form.querySelector('#name').value.trim();
-    const email    = form.querySelector('#email').value.trim();
-    const ig       = form.querySelector('#instagram').value.trim();
-    const type     = form.querySelector('#type').value;
-    const message  = form.querySelector('#message').value.trim();
-
-    const subject = encodeURIComponent('Mamori Social — Enquiry from ' + name);
-    const body = encodeURIComponent(
-      'Name: ' + name + '\n' +
-      'Email: ' + email + '\n' +
-      (ig ? 'Instagram: ' + ig + '\n' : '') +
-      'Type: ' + type + '\n\n' +
-      message
-    );
-
-    window.location.href = 'mailto:hello@mamorisocial.com?subject=' + subject + '&body=' + body;
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+      if (res.ok) {
+        btn.textContent = 'Sent!';
+        btn.style.background = '#6B9E7A';
+        form.reset();
+      } else {
+        btn.textContent = 'Something went wrong. Try again.';
+        btn.style.background = '#C8694F';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Something went wrong. Try again.';
+      btn.style.background = '#C8694F';
+      btn.disabled = false;
+    }
   });
 }
